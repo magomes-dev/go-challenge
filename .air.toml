@@ -1,0 +1,13 @@
+# air.toml
+
+root = "."  # Diretório raiz do seu projeto
+
+[build]
+  bin = "tmp/main.exe"  # Caminho para o executável compilado
+  cmd = "go build -o ./tmp/main.exe ./cmd"  # Comando para construir o projeto
+  delay = 1000  # Atraso em milissegundos antes de reconstruir após as alterações
+  buildvcs = false  # Desativa completamente a marcação do VCS durante a construção
+
+[policy]
+  notify = ["*.go"]  # Monitora alterações apenas em arquivos .go
+  skip = [".git/*", "tmp/*"]  # Ignora diretórios .git e tmp
